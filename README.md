@@ -6,10 +6,21 @@ The Web Intelligence Specification (WIS) provides a set of guidelines for struct
 
 `/features`
 
-![](https://i.imgur.com/9Fg52Xu.png)
+`Returns` Endpoints with heirarchy rules and description
+
+```javascript
+{
+  status,
+  data,
+  actions,
+}
+// actions: L2 heirarchy endpoints
+```
+
+![Workflow 1](https://i.imgur.com/9Fg52Xu.png)
 
 ### Workflow 2
 
 `/ask`
 
-![](https://i.imgur.com/5x6tc83.png)
+![Workflow 2](https://i.imgur.com/5x6tc83.png)
