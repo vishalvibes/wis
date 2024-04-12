@@ -1,2 +1,7 @@
 # Web Intelligence Specification (WIS)
-The Web Intelligence Specification (WIS) provides a set of guidelines for structuring websites to improve their understanding and analysis by AI agents
+
+The Web Intelligence Specification (WIS) provides a set of guidelines for structuring web applications to improve interaction with AI agents.
+
+`/ask`
+
+`/features`
