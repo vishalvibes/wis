@@ -34,11 +34,11 @@ We propose a very simple guideline for web applications to follow.
 
 Developers could implement these 2 workflows into their web application.
 
-### Workflow 1
+## Workflow 1
 
 ![Workflow 1](https://i.imgur.com/ujH7AlD.png)
 
-In workflow 1 the visiting agent has to run a loop to perform any operation.
+In workflow 1 (Actions Workflow) the visiting agent has to run a loop to perform any operation.
 
 It would be visiting `/actions` before performing any other operation.
 
@@ -92,63 +92,44 @@ It's a `tree like structure`, similar to how users navigate through UI interface
 // ${action_endpoint_x}: (n+1)th level heirarchy endpoints
 ```
 
-### Workflow 2
+## Workflow 2
 
-`/ask`
+Workflow 2 (Ask Workflow) is recommended only for more complex web applications with the resources to create their own LLM application.
+
+This is a more futuristic workflow, where one agent talks to the other.
+
+Any workflow that implements this workflow is mandated to create a `/ask` route.
+
+An external user agent could query `/ask` in natural language and get things done directly without running any loops.
+
+This obviously means that the loop is run by web applications own agent internally and all the processing has been shifted to the application side instead of users side.
+
+This would take more effort to create, hence not recommended for smaller applications.
 
 ![Workflow 2](https://i.imgur.com/D3OkqTq.png)
 
-The `/features` endpoint serves as a discovery mechanism for AI to ascertain what the service can do, while the `/ask` endpoint provides a way for AI to engage with those features using natural language.
-
-~~Describe your solution to the problem.~~
-
-Provide examples and describe how they work. -> Maps + Food + Cab booking integration
-
-Show how your solution is better than current workarounds: is it cleaner, safer, or more efficient? -> Current workarounds only work on one web app at a time and scrape UI
+The `/actions` endpoint serves as a discovery mechanism for AI to ascertain what the service can do then query endpoints in a loop, while the `/ask` endpoint provides a way for AI to engage with the application using natural language.
 
 ## Comparison With Current Workarounds
 
-## Examples
+Current workarounds are either trying to create an agent that could interract with frontend interfaces that are primarily built for humans.
 
-~~## Detailed design~~
+Or are trying to integrate one web application at a time, which restricts small developers to build general purpose agents and applications with ease.
 
-~~Describe the design of the solution in detail. This should include an exact description of the changes to the contents of the OpenAPI specification. That description should include a extract of each section of the OpenAPI specification which is impacted by the proposal with all proposed modifications applied. These extracts may be provided through additional files which are identified and described in this section.~~
+## Example
 
-## Backwards compatibility
+## Backwards compatibility and Benefits
 
-Proposals should be structure so that they can be handled by existing OAS compliant software. Any potential issues should be identified and discussed.
+**Gradual Adoption:** WIS allows for incremental implementation alongside existing features.
 
-### Seamless Integration
+**Modular Approach:** Acts as an independent module, leaving the core application unchanged.
 
-Gradual Adoption: WIS allows for incremental implementation alongside existing features.
+**Utilization of Current APIs:** Enhances current APIs with AI capabilities without fundamental changes.
 
-Modular Approach: Acts as an independent module, leaving the core
-application unchanged.
+**No Downtime Required:** Integrates with current systems without service interruptions.
 
-### Preservation of Existing Infrastructure
+**Independent Updates:** Permits isolated updates to the AI layer without affecting the main application.
 
-Utilization of Current APIs: Enhances current APIs with AI capabilities without fundamental changes.
+**Optional Use:** Provides AI functionalities as an optional layer for users who wish to utilize it.
 
-No Downtime Required: Integrates with current systems without service interruptions.
-
-### Flexible Deployment
-
-Independent Updates: Permits isolated updates to the AI layer without affecting the main application.
-
-Optional Use: Provides AI functionalities as an optional layer for users who wish to utilize it.
-
-### Risk Mitigation
-
-Phased Roll-Out: Enables controlled, step-wise integration to assess impact and performance.
-
-Fallback Mechanisms: Offers traditional service methods as a backup to maintain continuity.
-
-### Forward Compatibility
-
-Scalable for Future AI Advancements: Ensures the system can evolve with AI technology.
-
-Adaptation to AI Progress: Allows enhancements to the WIS component as AI develops, without disrupting the existing application.
-
-## Alternatives considered
-
-Describe alternative approaches to addressing the same problem, and why you chose this approach instead.
+**Phased Roll-Out:** Enables controlled, step-wise integration to assess impact and performance.
