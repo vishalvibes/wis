@@ -38,11 +38,20 @@ Developers could implement these 2 workflows into their web application.
 
 ![Workflow 1](https://i.imgur.com/ujH7AlD.png)
 
-In workflow 1 the visiting agent has to run a loop to perform any operation. It would be visiting `/actions` before performing any other operation. This endpoint will give instructions to the visiting agent about how to should an agent start to navigate this webapp.
+In workflow 1 the visiting agent has to run a loop to perform any operation.
+
+It would be visiting `/actions` before performing any other operation.
+
+This endpoint will give instructions to the visiting agent about how to should an agent start to navigate this webapp.
 
 Meanwhile, For the web applications following WIS workflow 1, it is mandated to implement a `/actions` route.
 
-This route would return a json object which would contain a list of endpoints (Just L1 hierarchy), a description in natural language of their functionalities, a list of input parameters and the return value details.
+This route would return a json object which would contain:
+
+- List of endpoints (Just L1 hierarchy)
+- Description in natural language of their functionalities
+- List of input parameters
+- Return value details
 
 ```javascript
 {
@@ -62,9 +71,9 @@ This route would return a json object which would contain a list of endpoints (J
 
 Each of the endpoint which are mentioned in the `/actions` endpoint are mandated to have their return data in the following format.
 
-They too would contain a list of endpoints instructing, what further actions can the agent perform from here.
+They too would contain a list of endpoints instructing further actions that the agent could perform after it has the return data in this response.
 
-It's tree like structure, similar to how users navigate through UI interfaces.
+It's a `tree like structure`, similar to how users navigate through UI interfaces.
 
 ```javascript
 {
