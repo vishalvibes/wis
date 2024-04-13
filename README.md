@@ -139,3 +139,7 @@ In this example we will demonstrate the actions workflow.
 - **Optional Use:** Provides AI functionalities as an optional layer for users who wish to utilize it.
 
 - **Phased Roll-Out:** Enables controlled, step-wise integration to assess impact and performance.
+
+---
+
+**P.S.** - While this could have been just an extension of accessibility standards it may merge into them. It is important to take into consideration that in the future there will be web applications that are built solely for AI agents. Such websites probably would have no HTML code and UI at all. So the standard has to be for the server side only.
