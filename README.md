@@ -18,11 +18,11 @@ The Web Intelligence Specification (WIS) provides a set of guidelines for struct
 
 ## Motivation
 
-Creating LLM agents that browses the web is difficult.
+Creating LLM agents that browse the web is difficult.
 
 Due to the lack of any structure or information, LLM agents need to be configured by the creators for every web application separately.
 
-However, envision a paradigm shift: if the web applications themselves can help LLM agents to browse them effectively. It would be a game changer.
+However, envision a paradigm shift: if the web applications themselves can help LLM agents browse them effectively. It would be a game-changer.
 
 The WIS approach proposes a universal standard to effectively decouple the visiting AI Agent's understanding capabilities from the application's logic and user interface.
 
@@ -42,11 +42,11 @@ In workflow 1 (Actions Workflow) the visiting agent has to run a loop to perform
 
 It would be visiting `/actions` before performing any other operation.
 
-This endpoint will give instructions to the visiting agent about how to should an agent start to navigate this webapp.
+This endpoint will give instructions to the visiting agent about how to should an agent start to navigate this web app.
 
 Meanwhile, For the web applications following WIS workflow 1, it is mandated to implement a `/actions` route.
 
-This route would return a json object which would contain:
+This route would return a JSON object which would contain:
 
 - List of endpoints (Just L1 hierarchy)
 - Description in natural language of their functionalities
@@ -73,7 +73,7 @@ Each of the endpoint which are mentioned in the `/actions` endpoint are mandated
 
 They too would contain a list of endpoints instructing further actions that the agent could perform after it has the return data in this response.
 
-It's a `tree like structure`, similar to how users navigate through UI interfaces.
+It's a `tree-like structure`, similar to how users navigate through UI interfaces.
 
 ```javascript
 {
@@ -102,25 +102,25 @@ Any workflow that implements this workflow is mandated to create a `/ask` route.
 
 An external user agent could query `/ask` in natural language and get things done directly without running any loops.
 
-This obviously means that the loop is run by web applications own agent internally and all the processing has been shifted to the application side instead of users side.
+This obviously means that the loop is run by the web application's own agent internally and all the processing has been shifted to the application side instead of users side.
 
 This would take more effort to create, hence not recommended for smaller applications.
 
 ![Workflow 2](https://i.imgur.com/D3OkqTq.png)
 
-The `/actions` endpoint serves as a discovery mechanism for AI to ascertain what the service can do then query endpoints in a loop, while the `/ask` endpoint provides a way for AI to engage with the application using natural language.
+The `/actions` endpoint serves as a discovery mechanism for AI to ascertain what the service can do and then query endpoints in a loop, while the `/ask` endpoint provides a way for AI to engage with the application using natural language.
 
 ## Comparison With Current Workarounds
 
-Current workarounds are either trying to create an agent that could interract with frontend interfaces that are primarily built for humans.
+Current workarounds are either trying to create an agent that could interact with frontend interfaces that are primarily built for humans.
 
-Or are trying to integrate one web application at a time, which restricts small developers to build general purpose agents and applications with ease.
+Or are trying to integrate one web application at a time, which restricts small developers to build general-purpose agents and applications with ease.
 
 ## Example
 
-Placing order from a nearby restaurant with good reviews.
+Placing orders from a nearby restaurant with good reviews.
 
-In this example we will demonstrate the actions workflow.
+In this example, we will demonstrate the actions workflow.
 
 ![Example workflow](https://i.imgur.com/gop8TtU.png)
 
