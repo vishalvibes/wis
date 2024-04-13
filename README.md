@@ -120,16 +120,16 @@ Or are trying to integrate one web application at a time, which restricts small 
 
 ## Backwards compatibility and Benefits
 
-**Gradual Adoption:** WIS allows for incremental implementation alongside existing features.
+- **Gradual Adoption:** WIS allows for incremental implementation alongside existing features.
 
-**Modular Approach:** Acts as an independent module, leaving the core application unchanged.
+- **Modular Approach:** Acts as an independent module, leaving the core application unchanged.
 
-**Utilization of Current APIs:** Enhances current APIs with AI capabilities without fundamental changes.
+- **Utilization of Current APIs:** Enhances current APIs with AI capabilities without fundamental changes.
 
-**No Downtime Required:** Integrates with current systems without service interruptions.
+- **No Downtime Required:** Integrates with current systems without service interruptions.
 
-**Independent Updates:** Permits isolated updates to the AI layer without affecting the main application.
+- **Independent Updates:** Permits isolated updates to the AI layer without affecting the main application.
 
-**Optional Use:** Provides AI functionalities as an optional layer for users who wish to utilize it.
+- **Optional Use:** Provides AI functionalities as an optional layer for users who wish to utilize it.
 
-**Phased Roll-Out:** Enables controlled, step-wise integration to assess impact and performance.
+- **Phased Roll-Out:** Enables controlled, step-wise integration to assess impact and performance.
