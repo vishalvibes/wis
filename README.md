@@ -118,7 +118,9 @@ Or are trying to integrate one web application at a time, which restricts small 
 
 ## Example
 
-Placing order from a nearby restaurant with good reviews
+Placing order from a nearby restaurant with good reviews.
+
+In this example we will demonstrate the actions workflow.
 
 ![Example workflow](https://i.imgur.com/gop8TtU.png)
 
