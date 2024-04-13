@@ -118,6 +118,10 @@ Or are trying to integrate one web application at a time, which restricts small 
 
 ## Example
 
+Placing order from a nearby restaurant with good reviews
+
+![Example workflow](https://i.imgur.com/gop8TtU.png)
+
 ## Backwards compatibility and Benefits
 
 - **Gradual Adoption:** WIS allows for incremental implementation alongside existing features.
